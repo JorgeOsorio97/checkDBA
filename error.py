@@ -15,7 +15,7 @@ BODY_HTML = """<html>
             </html>
             """
 send_email("jorge.valdez.osorio@gmail.com", "CheckDB", BODY_TEXT, BODY_HTML)
-# Replace sender@
+
 
 base_url="http://64acdb529bb1.ngrok.io"
 
