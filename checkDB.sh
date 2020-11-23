@@ -1,4 +1,4 @@
-service mysqld status | grep "running" >> /dev/null 
+systemctl status mysqld | grep "running" >> /dev/null 
 if [ $? -eq 0 ] 
 then 
 	echo "BASE todo cool"
