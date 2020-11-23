@@ -3,13 +3,13 @@ from botocore.exceptions import ClientError
 
 base_url="http://64acdb529bb1.ngrok.io"
 
+AWS_REGION = "us-east-2"
 
 def send_email(recipient: str, subject: str, body_text: str, body_html: str):
     SENDER = "CheckDB <jorge.valdez.osorio@gmail.com>"
 
     RECIPIENT = "jorge.valdez.osorio@gmail.com"
 
-    AWS_REGION = "us-east-2"
 
     SUBJECT = "CheckDB"
 
@@ -61,3 +61,13 @@ def send_email(recipient: str, subject: str, body_text: str, body_html: str):
     else:
         print("Email sent! Message ID:"),
         print(response['MessageId'])
+
+
+def send_sms(message):
+    sns = boto3.client('sns', region_name=AWS_REGION)
+
+    # Publish a simple message to the specified SNS topic
+    response = sns.publish(
+        TopicArn='arn:aws:sns:us-east-2:806876135148:DBA-SMS',    
+        Message=message,    
+    )
