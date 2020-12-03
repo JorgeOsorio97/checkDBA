@@ -1,4 +1,5 @@
 date
+nohup mysqldump --all-databases > /home/jorge/backup_`date  +"%Y-%m-%d_%H:%M"`.sql
 
 if [ $? -eq 0 ] 
 then 
