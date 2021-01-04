@@ -6,10 +6,10 @@ then
 	echo "BASE todo cool"
 	date >> /var/www/html/index.html
 	echo "BASE todo cool <br />" >> /var/www/html/index.html
-	python3 /home/ulises/exito.py
+	python3 /home/jorge/checkDBA/checkDB/exito.py
 else
 	echo "Base de datos caida"
 	date >> /var/www/html/index.html
 	echo "Base de datos caida <br />" >> /var/www/html/index.html
-	python3 /home/ulises/error.py
+	python3 /home/jorge/checkDBA/checkDB/error.py
 fi
