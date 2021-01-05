@@ -16,5 +16,5 @@ then
 elif [ $accion -eq 3 ]
 then
 echo "Iniciando proceso de restauriación de la base de datos"
-    ../checkDB/checkDB.sh
+    ../restore/menurestore.sh
 fi
