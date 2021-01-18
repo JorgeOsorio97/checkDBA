@@ -2,4 +2,4 @@ __pycache__
 .env
 env
 backupDB/data/
-replicationDB/*/*/data
+replicationDB/*/*/data/*
