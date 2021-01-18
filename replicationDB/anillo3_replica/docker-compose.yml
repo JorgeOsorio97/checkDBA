@@ -17,7 +17,7 @@ services:
       - ./hybrid1/data:/var/lib/mysql
       - ./hybrid1/sql-scripts/:/docker-entrypoint-initdb.d/
     ports:
-      - 3307:3306
+      - 5001:3306
 
 
   hybrid2:
@@ -36,7 +36,7 @@ services:
       - ./hybrid2/data:/var/lib/mysql
       - ./hybrid2/sql-scripts/:/docker-entrypoint-initdb.d/
     ports:
-      - 3308:3306
+      - 5002:3306
 
   hybrid3:
     build:
@@ -54,7 +54,7 @@ services:
       - ./hybrid3/data:/var/lib/mysql
       - ./hybrid3/sql-scripts/:/docker-entrypoint-initdb.d/
     ports:
-      - 3311:3306
+      - 5005:3306
 
   repl1:
     build:
@@ -72,7 +72,7 @@ services:
       - ./repl1/data:/var/lib/mysql
       - ./repl1/sql-scripts/:/docker-entrypoint-initdb.d/
     ports:
-      - 3309:3306
+      - 5003:3306
 
   repl2:
     build:
@@ -90,7 +90,7 @@ services:
       - ./repl2/data:/var/lib/mysql
       - ./repl2/sql-scripts/:/docker-entrypoint-initdb.d/
     ports:
-      - 3310:3306
+      - 5004:3306
 
   repl3:
     build:
@@ -108,4 +108,4 @@ services:
       - ./repl3/data:/var/lib/mysql
       - ./repl3/sql-scripts/:/docker-entrypoint-initdb.d/
     ports:
-      - 3312:3306
+      - 5006:3306
