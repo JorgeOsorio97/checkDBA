@@ -11,13 +11,13 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: 1234567890
       MYSQL_DATABASE: test
-    container_name: hybrid1
+    container_name: parejas_hybrid1
     volumes:
       - ./hybrid1/mysqlconf:/etc/mysql/conf.d
       - ./hybrid1/data:/var/lib/mysql
       - ./hybrid1/sql-scripts/:/docker-entrypoint-initdb.d/
     ports:
-      - 3307:3306
+      - 5001:3306
 
 
   hybrid2:
@@ -30,13 +30,13 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: 1234567890
       MYSQL_DATABASE: test
-    container_name: hybrid2
+    container_name: parejas_hybrid2
     volumes:
       - ./hybrid2/mysqlconf:/etc/mysql/conf.d
       - ./hybrid2/data:/var/lib/mysql
       - ./hybrid2/sql-scripts/:/docker-entrypoint-initdb.d/
     ports:
-      - 3308:3306
+      - 5002:3306
 
   repl1:
     build:
@@ -48,13 +48,13 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: 1234567890
       MYSQL_DATABASE: test
-    container_name: repl1
+    container_name: parejas_repl1
     volumes:
       - ./repl1/mysqlconf:/etc/mysql/conf.d
       - ./repl1/data:/var/lib/mysql
       - ./repl1/sql-scripts/:/docker-entrypoint-initdb.d/
     ports:
-      - 3309:3306
+      - 5003:3306
 
   repl2:
     build:
@@ -66,10 +66,10 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: 1234567890
       MYSQL_DATABASE: test
-    container_name: repl2
+    container_name: parejas_repl2
     volumes:
       - ./repl2/mysqlconf:/etc/mysql/conf.d
       - ./repl2/data:/var/lib/mysql
       - ./repl2/sql-scripts/:/docker-entrypoint-initdb.d/
     ports:
-      - 3310:3306
+      - 5004:3306
