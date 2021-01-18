@@ -1,0 +1,111 @@
+version: '3.8'
+
+services: 
+  hybrid1:
+    build:
+      context: .
+      dockerfile: ./hybrid1/DOCKERFILE
+    image: mysql:5.7
+    # command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234567890
+      MYSQL_DATABASE: test
+    container_name: anillo3_hybrid1
+    volumes:
+      - ./hybrid1/mysqlconf:/etc/mysql/conf.d
+      - ./hybrid1/data:/var/lib/mysql
+      - ./hybrid1/sql-scripts/:/docker-entrypoint-initdb.d/
+    ports:
+      - 3307:3306
+
+
+  hybrid2:
+    build:
+      context: .
+      dockerfile: ./hybrid2/DOCKERFILE
+    image: mysql:5.7
+    # command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234567890
+      MYSQL_DATABASE: test
+    container_name: anillo3_hybrid2
+    volumes:
+      - ./hybrid2/mysqlconf:/etc/mysql/conf.d
+      - ./hybrid2/data:/var/lib/mysql
+      - ./hybrid2/sql-scripts/:/docker-entrypoint-initdb.d/
+    ports:
+      - 3308:3306
+
+  hybrid3:
+    build:
+      context: .
+      dockerfile: ./hybrid3/DOCKERFILE
+    image: mysql:5.7
+    # command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234567890
+      MYSQL_DATABASE: test
+    container_name: anillo3_hybrid3
+    volumes:
+      - ./hybrid3/mysqlconf:/etc/mysql/conf.d
+      - ./hybrid3/data:/var/lib/mysql
+      - ./hybrid3/sql-scripts/:/docker-entrypoint-initdb.d/
+    ports:
+      - 3311:3306
+
+  repl1:
+    build:
+      context: .
+      dockerfile: ./repl1/DOCKERFILE
+    image: mysql:5.7
+    # command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234567890
+      MYSQL_DATABASE: test
+    container_name: anillo3_repl1
+    volumes:
+      - ./repl1/mysqlconf:/etc/mysql/conf.d
+      - ./repl1/data:/var/lib/mysql
+      - ./repl1/sql-scripts/:/docker-entrypoint-initdb.d/
+    ports:
+      - 3309:3306
+
+  repl2:
+    build:
+      context: .
+      dockerfile: ./repl2/DOCKERFILE
+    image: mysql:5.7
+    # command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234567890
+      MYSQL_DATABASE: test
+    container_name: anillo3_repl2
+    volumes:
+      - ./repl2/mysqlconf:/etc/mysql/conf.d
+      - ./repl2/data:/var/lib/mysql
+      - ./repl2/sql-scripts/:/docker-entrypoint-initdb.d/
+    ports:
+      - 3310:3306
+
+  repl3:
+    build:
+      context: .
+      dockerfile: ./repl3/DOCKERFILE
+    image: mysql:5.7
+    # command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234567890
+      MYSQL_DATABASE: test
+    container_name: anillo3_repl3
+    volumes:
+      - ./repl3/mysqlconf:/etc/mysql/conf.d
+      - ./repl3/data:/var/lib/mysql
+      - ./repl3/sql-scripts/:/docker-entrypoint-initdb.d/
+    ports:
+      - 3312:3306
